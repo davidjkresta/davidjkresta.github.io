@@ -5,15 +5,36 @@ body {
     background: #f9f9f9;
 }
 
+header, footer, section, nav {
+    display: block;
+}
+
 .navbar {
     background: #222;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 1em;
+}
+
+.logo-link {
+    margin-right: 2em;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
 }
 
 .navbar ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-wrap: nowrap;
+}
+
+.navbar li {
     margin: 0;
     padding: 0;
 }
@@ -35,8 +56,13 @@ body {
     background: linear-gradient(#eee, #ccc);
 }
 
-.hero-logo {
-    max-width: 200px;
+.hero h1 {
+    margin-bottom: 0.5em;
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
     margin-bottom: 1em;
 }
 
@@ -48,19 +74,44 @@ body {
     border-radius: 5px;
     display: inline-block;
     margin-top: 1em;
+    font-weight: bold;
 }
 
 .cta-button:hover {
     background: #0033aa;
 }
 
-.games-list {
+.intro-section {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 0 1em;
+    text-align: center;
+}
+
+.intro-section h2 {
+    margin-bottom: 1em;
+    font-size: 1.8em;
+}
+
+.intro-section p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.games-list, .art-gallery {
     max-width: 800px;
     margin: 2em auto;
     padding: 0 1em;
 }
 
-.games-list article {
+.games-list h1, .art-gallery h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.games-list article, .art-gallery .art-piece {
     background: #fff;
     padding: 1em;
     margin-bottom: 1em;
@@ -68,7 +119,7 @@ body {
     border: 1px solid #ddd;
 }
 
-.games-list h2 {
+.games-list h2, .art-gallery h2 {
     margin-top: 0;
 }
 
@@ -76,6 +127,8 @@ body {
     max-width: 100%;
     display: block;
     margin: 1em 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 footer {
@@ -83,4 +136,22 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1em 0;
+    margin-top: 4em;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .cta-button {
+        display: block;
+        margin: 1em auto;
+    }
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar li a {
+        border-bottom: 1px solid #333;
+    }
 }
