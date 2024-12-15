@@ -4,6 +4,19 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Prison Architect | Dungeonkeeper-Style</title>
+    <script>
+      window.bgImages = [
+        '/assets/img/background1.png',
+        '/assets/img/background2.png',
+        '/assets/img/background3.png',
+        '/assets/img/background4.png',
+        '/assets/img/background5.png',
+        '/assets/img/background6.png'
+      ];
+      let storedIndex = parseInt(sessionStorage.getItem('bgIndex')) || 0;
+      window.currentImageIndex = storedIndex;
+      document.write('<div class="background-container show" style="background-image:url(' + window.bgImages[window.currentImageIndex] + ')"></div>');
+    </script>
     <link rel="stylesheet" href="../../assets/css/style.css"/>
     <script src="../../assets/js/script.js" defer></script>
 </head>
@@ -11,9 +24,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">Amcorblue Studios</div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+            <button class="nav-toggle"><span class="hamburger"></span></button>
             <ul class="nav-links">
                 <li><a href="../../index.html">Home</a></li>
                 <li class="dropdown">
@@ -45,7 +56,7 @@
     <main class="content-section">
         <div class="content-box">
             <h1>Prison Architect - Dungeonkeeper-Style</h1>
-            <p>In this version, you cannot control individual units. Instead, lay out zones (bathrooms, kitchens, sleeping areas, outdoor yards) and watch the AI interact. If the inmates become too unhappy, violence erupts. Manage morale, supplies, and security while indirectly shaping their environment.</p>
+            <p>Manage zones and AI behaviors indirectly. If inmates become unhappy, violence erupts. Maintain morale and control!</p>
         </div>
     </main>
     <footer>

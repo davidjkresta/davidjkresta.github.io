@@ -4,6 +4,19 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Atheria | Lore & Art</title>
+    <script>
+      window.bgImages = [
+        '/assets/img/background1.png',
+        '/assets/img/background2.png',
+        '/assets/img/background3.png',
+        '/assets/img/background4.png',
+        '/assets/img/background5.png',
+        '/assets/img/background6.png'
+      ];
+      let storedIndex = parseInt(sessionStorage.getItem('bgIndex')) || 0;
+      window.currentImageIndex = storedIndex;
+      document.write('<div class="background-container show" style="background-image:url(' + window.bgImages[window.currentImageIndex] + ')"></div>');
+    </script>
     <link rel="stylesheet" href="../assets/css/style.css"/>
     <script src="../assets/js/script.js" defer></script>
 </head>
@@ -11,9 +24,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">Amcorblue Studios</div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+            <button class="nav-toggle"><span class="hamburger"></span></button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li class="dropdown">
@@ -36,11 +47,16 @@
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
         </nav>
+        <div class="sub-navbar">
+            <a href="index.html" class="active-sub">Overview</a>
+            <a href="stories/index.html">Short Stories</a>
+            <a href="art/index.html">Art Galleries</a>
+        </div>
     </header>
     <main class="content-section">
         <div class="content-box">
             <h1>Atheria</h1>
-            <p>Atheria is the heart of all our projects. Explore its histories, cultures, languages, and landscapes. Dive into stories accompanied by original art, and discover galleries of characters, creatures, and places that populate this world.</p>
+            <p>Atheria is the heart of all our projects. Explore histories, cultures, and landscapes.</p>
             <ul>
                 <li><a href="stories/index.html">Short Stories</a></li>
                 <li><a href="art/index.html">Art Galleries</a></li>

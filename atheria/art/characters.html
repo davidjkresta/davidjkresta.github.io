@@ -4,6 +4,19 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Atheria Characters</title>
+    <script>
+      window.bgImages = [
+        '/assets/img/background1.png',
+        '/assets/img/background2.png',
+        '/assets/img/background3.png',
+        '/assets/img/background4.png',
+        '/assets/img/background5.png',
+        '/assets/img/background6.png'
+      ];
+      let storedIndex = parseInt(sessionStorage.getItem('bgIndex')) || 0;
+      window.currentImageIndex = storedIndex;
+      document.write('<div class="background-container show" style="background-image:url(' + window.bgImages[window.currentImageIndex] + ')"></div>');
+    </script>
     <link rel="stylesheet" href="../../assets/css/style.css"/>
     <script src="../../assets/js/script.js" defer></script>
 </head>
@@ -11,9 +24,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">Amcorblue Studios</div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+            <button class="nav-toggle"><span class="hamburger"></span></button>
             <ul class="nav-links">
                 <li><a href="../../index.html">Home</a></li>
                 <li class="dropdown">
@@ -31,16 +42,27 @@
                         <li><a href="../../projects/prison-architect/dungeonkeeper.html">Dungeonkeeper-Style</a></li>
                     </ul>
                 </li>
-                <li><a href="../index.html" class="active">Atheria (Lore & Art)</a></li>
+                <li><a href="../index.html">Atheria (Lore & Art)</a></li>
                 <li><a href="../../about.html">About</a></li>
                 <li><a href="../../contact.html">Contact</a></li>
             </ul>
         </nav>
+        <div class="sub-navbar">
+            <a href="../index.html">Overview</a>
+            <a href="../stories/index.html">Short Stories</a>
+            <a href="index.html">Art Galleries</a>
+        </div>
+        <div class="sub-navbar">
+            <a href="index.html">Art Overview</a>
+            <a href="characters.html" class="active-sub">Characters</a>
+            <a href="locations.html">Locations</a>
+            <a href="creatures.html">Creatures</a>
+        </div>
     </header>
     <main class="content-section">
         <div class="content-box">
             <h1>Character Gallery</h1>
-            <p>Meet the heroes, villains, and everyday folk that populate Atheria. Each portrait tells a story of its own.</p>
+            <p>Meet the heroes, villains, and everyday folk of Atheria. Each portrait tells a story.</p>
             <p>[Add your character art images here]</p>
         </div>
     </main>

@@ -4,6 +4,19 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>About | Amcorblue Studios</title>
+    <script>
+      window.bgImages = [
+        '/assets/img/background1.png',
+        '/assets/img/background2.png',
+        '/assets/img/background3.png',
+        '/assets/img/background4.png',
+        '/assets/img/background5.png',
+        '/assets/img/background6.png'
+      ];
+      let storedIndex = parseInt(sessionStorage.getItem('bgIndex')) || 0;
+      window.currentImageIndex = storedIndex;
+      document.write('<div class="background-container show" style="background-image:url(' + window.bgImages[window.currentImageIndex] + ')"></div>');
+    </script>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <script src="assets/js/script.js" defer></script>
 </head>
@@ -11,9 +24,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">Amcorblue Studios</div>
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
+            <button class="nav-toggle"><span class="hamburger"></span></button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
@@ -41,8 +52,8 @@
         <section class="content-section">
             <div class="content-box">
                 <h1>About Us</h1>
-                <p>We are a dedicated game studio committed to crafting immersive worlds, dynamic storytelling, and innovative gameplay. Our projects are more than just games; they’re gateways into the rich universe of Atheria.</p>
-                <p>From strategic card duels to expansive video game adventures and sandbox prison management, our work embodies creativity, depth, and replayability. Every piece of art and every line of lore we produce connects to the broader tapestry that is Atheria.</p>
+                <p>We are a dedicated game studio committed to crafting immersive worlds and innovative gameplay.</p>
+                <p>From card duels to expansive RPGs and sandbox prisons, every piece of art and lore connects to Atheria.</p>
             </div>
         </section>
     </main>
