@@ -8,14 +8,14 @@
     box-sizing: border-box;
 }
 
-/* Make the page use full height so the footer can stick to the bottom */
+/* Make page use full height so footer sticks to bottom */
 html, body {
     height: 100%;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: #f9f9f9;
+    background: #000; /* black base to prevent flashes */
     color: #333;
     line-height: 1.6;
     display: flex;
@@ -29,7 +29,7 @@ main {
 /* Typography */
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    color: #222;
+    color: #fff; /* text white for better contrast */
 }
 h1 {
     font-size: 2.2rem;
@@ -42,17 +42,17 @@ h2 {
 p {
     margin-bottom: 1em;
     font-size: 1rem;
-    color: #555;
+    color: #eee;
 }
 
 /* Links */
 a {
     text-decoration: none;
-    color: #0066cc;
+    color: #66aaff;
     transition: color 0.3s;
 }
 a:hover {
-    color: #004999;
+    color: #aad4ff;
 }
 
 /* Layout Containers */
@@ -65,18 +65,33 @@ a:hover {
 .content-section ul,
 .intro-sections ul {
     list-style: none;
-    padding-left: 0;
 }
 .content-section li,
 .intro-sections li {
     margin-bottom: 0.5em;
 }
 
+/* Content Box for readability */
+.content-box {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero-content {
+    background: rgba(0,0,0,0.5);
+    display: inline-block;
+    padding: 1em 2em;
+    border-radius: 5px;
+}
+
 /* Navbar */
 .navbar {
     display: flex;
     align-items: center;
-    background: #fff;
+    background: rgba(255,255,255,0.9);
     border-bottom: 1px solid #ddd;
     padding: 0.75em 1em;
     position: relative;
@@ -172,23 +187,31 @@ a:hover {
     }
 }
 
+/* Sub-Navbar for project sub-pages */
+.sub-navbar {
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.7);
+    padding: 0.5em;
+    gap: 1em;
+}
+.sub-navbar a {
+    color: #fff;
+    font-weight: 500;
+    padding: 0.5em 0.75em;
+    border-radius: 3px;
+    font-size: 0.95rem;
+}
+.sub-navbar a:hover,
+.sub-navbar a.active-sub {
+    background: rgba(255,255,255,0.2);
+}
+
 /* Hero Section */
-/* Reduced padding to make the hero less tall */
 .hero {
     background: linear-gradient(to bottom right, #333, #555);
-    color: #fff;
     text-align: center;
     padding: 2em 1em;
-}
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1em;
-}
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 1em;
-    color: #ddd;
 }
 
 /* Intro Cards */
@@ -305,9 +328,15 @@ footer {
     background-position: center;
     transition: opacity 1.5s ease-in-out;
     opacity: 0;
-    /* Add a dark background to prevent white flash */
     background-color: #000;
 }
 .background-container.show {
     opacity: 1;
+}
+
+/* Optional styling for story-art */
+.story-art {
+    max-width: 100%;
+    margin: 1em 0;
+    border-radius: 5px;
 }

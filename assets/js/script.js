@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     const images = [
-        'assets/img/background1.png', // Replace these filenames with your actual images
+        'assets/img/background1.png',
         'assets/img/background2.png',
         'assets/img/background3.png',
         'assets/img/background4.png',
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateBackground() {
         bgContainer.style.backgroundImage = `url('${images[currentImageIndex]}')`;
-        sessionStorage.setItem('bgIndex', currentImageIndex); // Persist current index
+        sessionStorage.setItem('bgIndex', currentImageIndex);
         currentImageIndex = (currentImageIndex + 1) % images.length;
     }
 
